@@ -931,6 +931,7 @@ defmodule Tar do
 
   defp add1(r_reader() = reader, name, nameInArchive, r_add_opts(read_info: readInfo) = opts)
        when is_list(name) do
+    IO.inspect(readInfo, label: "add1")
     res =
       case readInfo.(name) do
         {:error, reason0} ->
